@@ -7,7 +7,7 @@ const validateId = (id) => {
 };
 
 const validateProducts = (name) => {
-  const { error } = productsSchema.validate(name);
+  const { error } = productsSchema.validate({ name });
   if (error) return { type: 'INPUT_VALUE', message: error.message };
   return { type: null, message: '' };
 };

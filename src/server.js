@@ -11,8 +11,6 @@ app.listen(process.env.PORT, () => {
 const port = 3306;
 
 app.listen(port, async () => {
-  console.log(`teste conheção com banco ${port}`);
-
   // O código abaixo é para testarmos a comunicação com o MySQL
   const [result] = await connection.execute('SELECT 1');
   if (result) {
