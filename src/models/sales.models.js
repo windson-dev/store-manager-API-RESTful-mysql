@@ -12,7 +12,6 @@ const getLastSale = async () => {
   const [[result]] = await connection.execute(
     'SELECT id FROM StoreManager.sales ORDER BY id DESC LIMIT 1',
   );
-  console.log('get last sale', result);
   return result;
 };
 
