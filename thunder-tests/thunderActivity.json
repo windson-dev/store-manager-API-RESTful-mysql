@@ -27,6 +27,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-11-11T23:59:28.246Z",
+<<<<<<< HEAD
     "modified": "2022-11-12T03:42:17.975Z",
     "headers": [],
     "params": [],
@@ -42,11 +43,18 @@
     "sortNum": 0,
     "created": "2022-11-12T02:51:47.029Z",
     "modified": "2022-11-18T19:10:36.970Z",
+=======
+    "modified": "2022-11-12T01:00:15.860Z",
+>>>>>>> 2804a35cc7d233e320a2f54b73600c4776666d68
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
+<<<<<<< HEAD
       "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+=======
+      "raw": "{\r\n \r\n}",
+>>>>>>> 2804a35cc7d233e320a2f54b73600c4776666d68
       "form": []
     },
     "tests": []
