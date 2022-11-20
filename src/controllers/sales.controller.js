@@ -13,7 +13,7 @@ const createSales = async (req, res) => {
 };
 
 const listSales = async (_req, res) => {
-  const { type, message } = await salesService.findAll()
+  const { type, message } = await salesService.findAll();
   if (type) return res.status(404).send(message);
   res.status(200).json(message);
 };

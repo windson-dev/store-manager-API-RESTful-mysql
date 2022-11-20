@@ -51,7 +51,7 @@ const allProductsSalesId = async (id) => {
     [id],
   );
   return camelize(result);
-}
+};
 
 module.exports = {
   findAllSale,
