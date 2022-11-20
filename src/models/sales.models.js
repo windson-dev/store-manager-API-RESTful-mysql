@@ -34,8 +34,29 @@ const insertSaleProducts = async (sale) => {
   )));
 };
 
+const allProductsSales = async () => {
+  const [result] = await connection.execute(
+    `SELECT saleProducts.quantity, saleProducts.product_id, saleProducts.sale_id, sales.date 
+    FROM StoreManager.sales_products AS saleProducts 
+    INNER JOIN StoreManager.sales AS sales ON sales.id = saleProducts.sale_id`,
+  );
+  return camelize(result);
+};
+
+const allProductsSalesId = async (id) => {
+  const [result] = await connection.execute(
+    `SELECT saleProducts.quantity, saleProducts.product_id, sales.date 
+    FROM StoreManager.sales_products AS saleProducts
+    INNER JOIN StoreManager.sales AS sales ON sales.id = saleProducts.sale_id WHERE id = (?)`,
+    [id],
+  );
+  return camelize(result);
+}
+
 module.exports = {
   findAllSale,
   insertSale,
   insertSaleProducts,
+  allProductsSales,
+  allProductsSalesId,
 };

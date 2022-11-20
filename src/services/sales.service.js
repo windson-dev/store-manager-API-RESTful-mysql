@@ -13,6 +13,20 @@ const insertNewSales = async (sales) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
+const findAll = async () => {
+  const sales = await salesModels.allProductsSales();
+  return { type: null, message: sales };
+};
+
+const findSaleId = async (id) => {
+  const sales = await salesModels.allProductsSalesId(id);
+  if(!sales.length) return { type: 'SALE_NOT_FOUND', message: sales };
+  return { type: null, message: sales };
+};
+
+
 module.exports = {
   insertNewSales,
+  findAll,
+  findSaleId,
 };
