@@ -20,7 +20,6 @@ describe('Testes do Services Products', () => {
   });
 
   it('Testa se é possivel procurar um produto pelo seu ID', async () => {
-    afterEach(sinon.restore);
     const product = { id: 1, name: 'Martelo de Thor' }
     sinon.stub(productsModels, 'findAll').resolves(product);
     const error = await productsService.findById(1);
