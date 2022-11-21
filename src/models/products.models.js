@@ -26,7 +26,7 @@ const insert = async (products) => {
 
 const updateProduct = async (id, name) => {
   await connection.execute(
-    `UPDATE StoreManager.products SET name = (?) WHERE id = (?)`,
+    'UPDATE StoreManager.products SET name = (?) WHERE id = (?)',
     [...Object.values(name), id],
   );
 };
