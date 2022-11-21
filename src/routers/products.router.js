@@ -7,5 +7,6 @@ const validateNewProductFields = require('../middlewares/validateNewProductsFiel
 router.get('/', productsController.listProduct);
 router.get('/:id', productsController.getProduct);
 router.post('/', validateNewProductFields, productsController.createProduct);
+router.put('/:id', validateNewProductFields, productsController.updateProductData);
 
 module.exports = router; 
