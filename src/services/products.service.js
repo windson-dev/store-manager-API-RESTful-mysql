@@ -27,7 +27,7 @@ const createProduct = async (name) => {
 
 const updateProductById = async (id, name) => {
   await productsModel.updateProduct(id, name);
-  const idProduct = await productsModel.findById(id)
+  const idProduct = await productsModel.findById(id);
   if (!idProduct) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
   return { type: null, message: idProduct };
 };

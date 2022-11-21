@@ -24,9 +24,9 @@ const updateProductData = async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   const { type, message } = await productsService.updateProductById(id, body);
-  if(type) return res.status(404).json({ message });
+  if (type) return res.status(404).json({ message });
   res.status(200).json(message);
-}
+};
 
 module.exports = {
   listProduct,
