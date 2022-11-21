@@ -42,4 +42,22 @@ describe('Testes do Controller Products', () => {
     expect(res.status).to.have.been.calledWith(statusResponse);
     expect(res.json).to.have.been.calledWith(product);
     });
+
+    it('Testa se é possivel alterar um produto', async () => {
+      const req = {
+        params: { id: 1 },
+        body: {},
+      };
+      const res = {};
+      const statusResponse = 200;
+      const product = [{ id: 1, name: 'Martelo de Thor' }];
+      
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(productsService, 'updateProductById').resolves({ type: null, message: product });
+      await productsController.updateProductData(req, res);
+
+      expect(res.status).to.have.been.calledWith(statusResponse);
+      expect(res.json).to.have.been.calledWith(product);
+    });
   });

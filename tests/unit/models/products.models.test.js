@@ -27,4 +27,16 @@ describe('Testes do Models Products', () => {
     const result = await productsModels.findById(1);
     expect(result).to.be.deep.equal(product);
   });
+
+  it('Testa se é possivel inserir um novo produto', async () => {
+    const newProduct = [{
+      id: 1,
+      name: 'Martelo de Thor',
+    }]; 
+
+    sinon.stub(connection, 'execute').resolves([{ insertId: newProduct}]);
+    const result = await productsModels.insert(newProduct);
+
+    expect(result).to.be.equal(newProduct); 
+  });  
 });
